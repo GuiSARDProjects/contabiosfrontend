@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "contabiosfront",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

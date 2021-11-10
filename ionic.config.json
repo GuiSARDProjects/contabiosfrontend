@@ -1,0 +1,8 @@
+{
+  "name": "contabiosfront",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "ff830661"
+}
