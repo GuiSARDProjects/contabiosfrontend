@@ -1,9 +1,36 @@
 <ion-header [translucent]="true">
   <ion-avatar>
-    <!-- <img src="https://github.com/igorsardinha.png"> -->
+    <img src="https://github.com/igorsardinha.png">
   </ion-avatar>
   <ion-label>Olá, <b>{{nomeUsuario}}</b></ion-label>
   <ion-button fill="clear" shape="round" width="60px" height="60px" size="large">
     <ion-icon name="settings-outline" slot="icon-only" size="large"></ion-icon>
   </ion-button>
 </ion-header>
+
+<ion-content [scrollEvents]="true" (ionScrollStart)="logScrollStart()" (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()">
+  <ion-card>
+    <img
+      src="https://www.oficinadanet.com.br/imagens/post/38867/capa-nusocios-resgate-de-bdrs-comeca-hoje-saiba-como-conseguir-seu-pedacinho-do-nubank.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>Ações</ion-card-subtitle>
+      <ion-card-title>IPO do NuBank</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Nubank prepara IPO com distribuição de BDR's gratuitos!!
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <img
+      src="https://www.infomoney.com.br/wp-content/uploads/2019/06/bitcoin-37.jpg?fit=900%2C600&quality=50&strip=all" />
+    <ion-card-header>
+      <ion-card-subtitle>Criptomoedas</ion-card-subtitle>
+      <ion-card-title>BitCoin Opera em Alta!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ETF de Bitcoin já lança mão de contratos de novembro e pode gerar disparidade maior em relação ao mercado à vista
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

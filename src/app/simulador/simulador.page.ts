@@ -39,6 +39,9 @@ export class SimuladorPage {
 
   public barChartOptions: ChartOptions = {
     responsive: true,
+    aspectRatio: 1,
+    maintainAspectRatio: true,
+    showLines: false
   };
 
   public barChartLabels: Label[] = [
@@ -49,7 +52,7 @@ export class SimuladorPage {
     'LCI',
     'Renda Fixa'];
   public barChartType: ChartType = 'bar';
-  public barChartLegend = true;
+  public barChartLegend = false;
   public barChartPlugins = [];
   public lineChartLegend = true;
   // public barChartData: ChartDataSets[] = [];

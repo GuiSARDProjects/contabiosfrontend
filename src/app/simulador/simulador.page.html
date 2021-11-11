@@ -49,7 +49,7 @@
     </ion-col>
   </ion-row>
 
-  <div style="display: block;" *ngIf="visualizarGrafico">
+  <div *ngIf="visualizarGrafico" class="chartArea">
     <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
       [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
     </canvas>
