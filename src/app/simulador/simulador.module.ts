@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 
 import { SimuladorRoutingModule as SimuladorRoutingModule } from './simulador-routing.module';
 import { SimuladorPage } from './simulador.page';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    SimuladorRoutingModule
+    SimuladorRoutingModule,
+    ChartsModule
   ],
   declarations: [SimuladorPage]
 })
