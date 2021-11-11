@@ -1,0 +1,25 @@
+ion-header{
+    text-align: center;
+    display: flex;
+
+    ion-avatar{
+        margin: 10px 25px;
+        width: 48px;
+        height: 48px;
+    }
+    ion-label{
+        margin-top: 20px;
+        text-align: center;
+        font-family: Helvetica;
+        font-weight: 300;
+        font-size: 20px;
+    }
+    ion-button{
+        position: absolute;
+        right: 8px;
+    }
+
+}
+ion-header::after {
+    background-image: none;
+    }
