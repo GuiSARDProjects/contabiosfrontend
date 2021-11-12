@@ -4,13 +4,13 @@
     <ion-col>
       <ion-item>
         <ion-label position="floating">Valor inicial</ion-label>
-        <ion-input [(ngModel)]="valorInicial" type="number"></ion-input>
+        <ion-input [(ngModel)]="valorInicial" inputmode="decimal"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col>
       <ion-item>
         <ion-label position="floating">Aporte mensal</ion-label>
-        <ion-input [(ngModel)]="aporteMensal" inputmode="decimal" type="number"></ion-input>
+        <ion-input [(ngModel)]="aporteMensal" inputmode="decimal"></ion-input>
       </ion-item>
     </ion-col>
   </ion-row>
@@ -25,21 +25,6 @@
           <ion-select-option value="20">20</ion-select-option>
           <ion-select-option value="25">25</ion-select-option>
           <ion-select-option value="30">30</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <ion-item>
-        <ion-select interface="action-sheet" (ionChange)="changeInvestimento($event)" [(ngModel)]="tipoInvestimento"
-          placeholder="Tipo de Investimento">
-          <ion-select-option value="poupanca">Poupança</ion-select-option>
-          <ion-select-option value="selic">Tesouro SELIC</ion-select-option>
-          <ion-select-option value="tesouro_pre_fixado">Tesouro Pré-fixado</ion-select-option>
-          <ion-select-option value="cdb">CDB</ion-select-option>
-          <ion-select-option value="lci">LCI</ion-select-option>
-          <ion-select-option value="renda_fixa">Renda Fixa</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-col>

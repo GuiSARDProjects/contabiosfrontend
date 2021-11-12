@@ -8,9 +8,7 @@ import { Label } from 'ng2-charts';
   styleUrls: ['simulador.page.scss']
 })
 
-
 export class SimuladorPage {
-  tipoInvestimento: string = "poupanca";
   visualizarGrafico: boolean = true;
   valorInicial: number = 0.00;
   aporteMensal: number = 0.00;
@@ -18,23 +16,27 @@ export class SimuladorPage {
 
   private listaRendimentoMensal = [
     {
-      Nome: "poupanca", Valor: 0.0030, Cor: "blue"
+      Nome: "Poupança", Valor: 0.0036, Cor: "blue"
     },
     {
-      Nome: "selic", Valor: 0.0052, Cor: "orange"
+      Nome: "Tesouro SELIC", Valor: 0.0052, Cor: "orange"
     },
     {
-      Nome: "tesouro_pre_fixado", Valor: 0.0084, Cor: "red"
+      Nome: "Renda Fixa Nubank", Valor: 0.0063, Cor: "gray"
     },
     {
-      Nome: "cdb", Valor: 0.0054, Cor: "yellow"
+      Nome: "CDB e LC", Valor: 0.0080, Cor: "gray"
     },
     {
-      Nome: "lci", Valor: 0.0042, Cor: "green"
+      Nome: "Tesouro Direto", Valor: 0.0052, Cor: "orange"
     },
     {
-      Nome: "renda_fixa", Valor: 0.0082, Cor: "gray"
-    },];
+      Nome: "CDI do PicPay", Valor: 0.0076, Cor: "gray"
+    },
+    {
+      Nome: "Renda Fixa Next", Valor: 0.0063, Cor: "gray"
+    },
+  ];
 
   private listaValores: number[] = [];
 
@@ -48,17 +50,18 @@ export class SimuladorPage {
   public barChartLabels: Label[] = [
     'Poupança',
     'Tesouro SELIC',
-    'Tesouro Pré-fixado',
-    'CDB',
-    'LCI',
-    'Renda Fixa'];
+    'Renda Fixa Nubank',
+    'CDB e LC',
+    'Tesouro Direto',
+    'CDI do PicPay',
+    'Renda Fixa Next'];
+
   public barChartType: ChartType = 'bar';
   public barChartLegend = false;
   public barChartPlugins = [];
   public lineChartLegend = true;
-  // public barChartData: ChartDataSets[] = [];
   public barChartData: ChartDataSets[] = [
-    { data: [0, 0, 0, 0, 0, 0, 0], label: null, backgroundColor: ["blue", "orange", "red", "yellow", "green", "gray"] }
+    { data: [0, 0, 0, 0, 0, 0, 0], label: null }
   ];
 
   constructor() { }
@@ -72,7 +75,8 @@ export class SimuladorPage {
       for (let j = 1; j <= this.quantidadeAnos; j++) {
         for (let k = 1; k <= 12; k++) {
           let juros = (valorFinal * rendimentoAtual);
-          valorFinal += this.aporteMensal + juros;
+
+          valorFinal = parseInt(valorFinal.toString()) + this.aporteMensal + juros;
         }
       }
 
