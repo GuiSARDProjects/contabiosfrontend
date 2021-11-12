@@ -10,11 +10,12 @@ import { Label } from 'ng2-charts';
 
 
 export class SimuladorPage {
-  public tipoInvestimento: string;
-  public visualizarGrafico: boolean = true;
-  public valorInicial: number = 10000;
-  public aporteMensal: number = 500;
-  public quantidadeAnos: number = 1;
+  tipoInvestimento: string = "poupanca";
+  visualizarGrafico: boolean = true;
+  valorInicial: number = 0.00;
+  aporteMensal: number = 0.00;
+  quantidadeAnos: number = 1;
+
   private listaRendimentoMensal = [
     {
       Nome: "poupanca", Valor: 0.0030, Cor: "blue"
@@ -60,16 +61,10 @@ export class SimuladorPage {
     { data: [0, 0, 0, 0, 0, 0, 0], label: null, backgroundColor: ["blue", "orange", "red", "yellow", "green", "gray"] }
   ];
 
-
   constructor() { }
 
   simular() {
     let valorFinal: number = this.valorInicial;
-
-    // console.log("valorInicial: ", this.valorInicial);
-    // console.log("aporteMensal: ", this.aporteMensal);
-    // console.log("quantidadeAnos: ", this.quantidadeAnos);
-    // console.log("tipoInvestimento: ", this.tipoInvestimento);
 
     for (let i = 0; i < this.listaRendimentoMensal.length; i++) {
       const rendimentoAtual = this.listaRendimentoMensal[i].Valor;
@@ -86,6 +81,8 @@ export class SimuladorPage {
       valorFinal = this.valorInicial;
     }
 
-    this.barChartData = [{ data: [this.listaValores[0], this.listaValores[1], this.listaValores[2], this.listaValores[3], this.listaValores[4], this.listaValores[5]], backgroundColor: ["blue", "orange", "red", "yellow", "green", "gray"] }];
+    this.barChartData = [{
+      data: [parseInt(this.listaValores[0].toFixed(2)), parseInt(this.listaValores[1].toFixed(2)), parseInt(this.listaValores[2].toFixed(2)), parseInt(this.listaValores[3].toFixed(2)), parseInt(this.listaValores[4].toFixed(2)), parseInt(this.listaValores[5].toFixed(2))], backgroundColor: ["blue", "orange", "red", "yellow", "green", "gray"]
+    }];
   }
 }
