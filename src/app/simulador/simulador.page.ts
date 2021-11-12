@@ -76,7 +76,7 @@ export class SimuladorPage {
         for (let k = 1; k <= 12; k++) {
           let juros = (valorFinal * rendimentoAtual);
 
-          valorFinal = parseInt(valorFinal.toString()) + this.aporteMensal + juros;
+          valorFinal = (valorFinal + this.aporteMensal + juros);
         }
       }
 
