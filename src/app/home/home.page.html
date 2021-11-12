@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-avatar>
-    <img src="https://github.com/igorsardinha.png">
+    <!-- <img src="https://github.com/igorsardinha.png"> -->
   </ion-avatar>
   <ion-label class="greating">Olá, <b>{{nomeUsuario}}</b></ion-label>
   <ion-button fill="clear" shape="round" width="60px" height="60px" size="large">
@@ -12,6 +12,66 @@
 </ion-header>
 
 <ion-content>
+  <ion-card class="card-moedas">
+    <ion-card-header>
+      <ion-card-title>Cotações das principais moedas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="div-moedas">
+        <div *ngFor="let moeda of listaMoedas">
+          <ion-item line="none">
+            <ion-label class="label-nome-moeda">{{moeda.name}}</ion-label>
+            <p>R$</p>
+            <ion-label class="label-valor-compra-moeda">{{moeda.buy}}</ion-label>
+            <ion-label class="label-nome-moeda">Var.</ion-label>
+            <ion-label class="label-valor-compra-moeda">{{moeda.variation}}</ion-label>
+            <p>%</p>
+          </ion-item>
+        </div>
+        <div *ngFor="let cotacao of listaCotacoes">
+          <ion-item line="none">
+            <ion-label class="label-nome-moeda">{{cotacao.name}}</ion-label>
+            <p>R$</p>
+            <ion-label class="label-valor-compra-moeda">{{cotacao.bid}}</ion-label>
+            <ion-label class="label-nome-moeda">Variação</ion-label>
+            <ion-label class="label-valor-compra-moeda">{{cotacao.varBid}}</ion-label>
+            <p>%</p>
+          </ion-item>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card-cotacoes">
+    <ion-card-header>
+      <ion-card-title>Principais índices da bolsa</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="div-moedas">
+        <div *ngFor="let moeda of listaMoedas">
+          <ion-item line="none">
+            <ion-label class="label-nome-moeda">{{moeda.name}}</ion-label>
+            <p>R$</p>
+            <ion-label class="label-valor-compra-moeda">{{moeda.buy}}</ion-label>
+            <ion-label class="label-nome-moeda">Var.</ion-label>
+            <ion-label class="label-valor-compra-moeda">{{moeda.variation}}</ion-label>
+            <p>%</p>
+          </ion-item>
+        </div>
+        <div *ngFor="let cotacao of listaCotacoes">
+          <ion-item line="none">
+            <ion-label class="label-nome-moeda">{{cotacao.name}}</ion-label>
+            <p>R$</p>
+            <ion-label class="label-valor-compra-moeda">{{cotacao.points}}</ion-label>
+            <ion-label class="label-nome-moeda">Variação</ion-label>
+            <ion-label class="label-valor-compra-moeda">{{cotacao.varBid}}</ion-label>
+            <p>%</p>
+          </ion-item>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
   <ion-card>
     <img
       src="https://www.oficinadanet.com.br/imagens/post/38867/capa-nusocios-resgate-de-bdrs-comeca-hoje-saiba-como-conseguir-seu-pedacinho-do-nubank.jpg" />

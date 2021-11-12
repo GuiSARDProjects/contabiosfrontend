@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../user/user.module').then(m => m.UserPageModule)
       },
       {
+        path: 'financas',
+        loadChildren: () => import('../financas/financas.module').then(m => m.FinancasPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
